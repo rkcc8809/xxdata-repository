@@ -16,6 +16,8 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
 }
@@ -29,7 +31,9 @@ li {
 }
 .s-advantage-line {
   border-top: 1px solid #0055df;
-  transform: skewY(-5deg);
+  -webkit-transform: skewY(-5deg);
+      -ms-transform: skewY(-5deg);
+          transform: skewY(-5deg);
   position: relative;
   z-index: -1;
 }
@@ -61,10 +65,19 @@ li {
   left: -5%;
 }
 .s-advantage-wrap__block__con {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   margin: 5% 0;
 }
 @media screen and (max-width: 480px) {
@@ -126,9 +139,16 @@ li {
   margin-bottom: 12.5%;
   width: 89.5%;
   margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 @media screen and (max-width: 768px) {
   .s-content-wrap__body__block {
@@ -145,7 +165,10 @@ li {
 .s-content-wrap__body__block.__second {
   margin-left: 0;
   margin-right: auto;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 @media screen and (max-width: 480px) {
   .s-content-wrap__body__block.__second {
@@ -155,9 +178,15 @@ li {
 }
 .s-content-wrap__body__block__left {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 @media screen and (max-width: 1024px) {
   .s-content-wrap__body__block__left {

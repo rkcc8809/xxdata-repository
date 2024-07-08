@@ -16,6 +16,8 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
 }
@@ -76,7 +78,9 @@ li {
   z-index: 2;
   top: 50%;
   left: 5%;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 @media screen and (max-width: 1024px) {
   .top-wrap__ttl {
@@ -116,6 +120,8 @@ li {
   font-size: clamp(0.75rem, 2.5vw, 2.25rem);
   line-height: 4.5;
   opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
 }
 .top-wrap__ttl .s-ttl.visible {
@@ -321,7 +327,6 @@ li {
   left: 0;
 }
 .about-wrap__con__block__box__right__img {
-  background-image: url("../img/top-service.jpeg");
   background-size: cover;
   z-index: -1;
   position: relative;
@@ -330,10 +335,13 @@ li {
   -webkit-clip-path: polygon(40% 0%, 100% 0%, 60% 100%, 0% 100%);
           clip-path: polygon(40% 0%, 100% 0%, 60% 100%, 0% 100%);
 }
+.about-wrap__con__block__box__right__img.__first {
+  background-image: url("../img/top-service.jpeg");
+}
 .about-wrap__con__block__box__right__img.__second {
   -webkit-clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 40% 100%);
           clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 40% 100%);
-  background-image: url("/img/top-company.jpeg");
+  background-image: url("../img/top-company.jpeg");
 }
 .about-wrap__con__block__box__right__img::after {
   position: absolute;
@@ -382,8 +390,12 @@ li {
   }
 }
 .case-wrap__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   margin: 10% 0;
 }
@@ -411,8 +423,12 @@ li {
   }
 }
 .case-wrap__top__link a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.2em;
   position: relative;
 }
@@ -426,6 +442,8 @@ li {
   height: clamp(0.75rem, -0.125rem + 2.92vw, 2.5rem);
 }
 .case-wrap__top__link a:hover {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .case-wrap__top__link a::after {
@@ -436,12 +454,20 @@ li {
   width: 100%;
   height: 2.5px;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
-  transform: scale(0, 1);
-  transform-origin: left top;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
 }
 .case-wrap__top__link a:hover::after {
-  transform: scale(0.95, 1);
+  -webkit-transform: scale(0.95, 1);
+      -ms-transform: scale(0.95, 1);
+          transform: scale(0.95, 1);
 }
 .case-wrap__bottom__con__img {
   width: 100%;
@@ -462,7 +488,11 @@ li {
 }
 
 .slider .slick-slide {
-  transform: scale(0.8); /* 左右の画像のサイズを80%に */
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8); /* 左右の画像のサイズを80%に */
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s; /* 拡大や透過のアニメーションを0.5秒で行う */
   opacity: 0.5; /* 透過50% */
 }
@@ -473,7 +503,9 @@ li {
 }
 
 .slider .slick-slide.slick-center {
-  transform: scale(1); /* 中央の画像のサイズだけ等倍に */
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); /* 中央の画像のサイズだけ等倍に */
   opacity: 1; /* 透過なし */
 }
 
@@ -500,7 +532,9 @@ li {
 .slick-prev {
   /* 戻る矢印のスタイル*/
   left: -3.5%;
-  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 @media screen and (max-width: 480px) {
   .slick-prev {
@@ -511,7 +545,9 @@ li {
 .slick-next {
   /* 次へ矢印のスタイル */
   right: -3.5%;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 @media screen and (max-width: 480px) {
   .slick-next {
@@ -576,8 +612,12 @@ li {
 }
 .news-wrap {
   border-top: 1px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 @media screen and (max-width: 480px) {
   .news-wrap {
@@ -603,8 +643,12 @@ li {
   }
 }
 .news-wrap__top__link a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   gap: 0.2em;
 }
@@ -618,6 +662,8 @@ li {
   height: clamp(0.75rem, -0.125rem + 2.92vw, 2.5rem);
 }
 .news-wrap__top__link a:hover {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .news-wrap__top__link a::after {
@@ -628,12 +674,20 @@ li {
   width: 100%;
   height: 2.5px;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
-  transform: scale(0, 1);
-  transform-origin: left top;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
 }
 .news-wrap__top__link a:hover::after {
-  transform: scale(0.92, 1);
+  -webkit-transform: scale(0.92, 1);
+      -ms-transform: scale(0.92, 1);
+          transform: scale(0.92, 1);
 }
 .news-wrap__bottom {
   margin-top: 10%;
@@ -653,8 +707,14 @@ li {
   }
 }
 .news-wrap__bottom__list__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .news-wrap__bottom__list__item a p {

@@ -15,6 +15,8 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
 }
@@ -37,14 +39,18 @@ li {
   padding: 0 1.5%;
   position: relative;
   left: 35px;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 1;
   background-color: #1b1b1c;
 }
 @media screen and (max-width: 480px) {
   .c-philo-wrap__ttl {
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -91,8 +97,10 @@ li {
 .c-philo-wrap__con__txt {
   width: 70%;
   background-color: #fff;
-  box-shadow: 0 4px 15px #aaa;
-  box-sizing: border-box;
+  -webkit-box-shadow: 0 4px 15px #aaa;
+          box-shadow: 0 4px 15px #aaa;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 2% 3.5%;
   margin-top: -2.5%;
   margin-left: auto;
@@ -164,8 +172,12 @@ li {
   color: #1b1b1c;
   -webkit-clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
           clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
   .c-greet-wrap__body {
@@ -234,13 +246,17 @@ li {
   position: relative;
   z-index: 2;
   background-color: #1b1b1c;
-  transform: translateY(-25%);
+  -webkit-transform: translateY(-25%);
+      -ms-transform: translateY(-25%);
+          transform: translateY(-25%);
   padding: 0 1.5%;
 }
 @media screen and (max-width: 480px) {
   .c-info-wrap__top__ttl {
     left: 50%;
-    transform: translate(-50%, -25%);
+    -webkit-transform: translate(-50%, -25%);
+        -ms-transform: translate(-50%, -25%);
+            transform: translate(-50%, -25%);
   }
 }
 .c-info-wrap__con {
@@ -252,8 +268,12 @@ li {
   }
 }
 .c-info-wrap__con__list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.5em 0;
 }
 @media screen and (max-width: 1024px) {
@@ -301,5 +321,6 @@ li {
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }

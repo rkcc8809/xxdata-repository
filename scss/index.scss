@@ -244,16 +244,18 @@
               left: 0;
             }
             &__img {
-              background-image: url("../img/top-service.jpeg");
               background-size: cover;
               z-index: -1;
               position: relative;
               width: 100%;
               aspect-ratio: 4 / 3;
               clip-path: polygon(40% 0%, 100% 0%, 60% 100%, 0% 100%);
+              &.__first {
+                background-image: url("../img/top-service.jpeg");
+              }
               &.__second {
                 clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 40% 100%);
-                background-image: url("/img/top-company.jpeg");
+                background-image: url("../img/top-company.jpeg");
               }
               &::after {
                 position: absolute;
@@ -335,15 +337,15 @@
         }
         & a::after {
           content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2.5px;
-            background: g.$cWhite;
-            transition: all 0.3s;
-            transform: scale(0, 1);
-            transform-origin: left top;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2.5px;
+          background: g.$cWhite;
+          transition: all 0.3s;
+          transform: scale(0, 1);
+          transform-origin: left top;
         }
         & a:hover::after {
           transform: scale(0.95, 1);
