@@ -1,0 +1,229 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: #fff;
+  background-color: #1b1b1c;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+.co-summary {
+  background-color: #fff;
+  color: #1b1b1c;
+  padding: 5% 0 2.5%;
+}
+@media screen and (max-width: 768px) {
+  .co-summary {
+    padding: 5% 0 5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .co-summary-wrap {
+    width: 82.5%;
+  }
+}
+.co-summary-wrap__ttl p {
+  font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.co-summary-wrap__ttl p.__contact {
+  font-weight: 700;
+}
+
+.co-con {
+  background-color: #fff;
+  color: #1b1b1c;
+}
+@media screen and (max-width: 768px) {
+  .co-con-wrap {
+    width: 82.5%;
+  }
+}
+.co-con-wrap hr {
+  width: 65vw;
+  border-top: 1px solid #1b1b1c;
+  background-color: #fff;
+  margin: 0;
+  margin-left: -5%;
+}
+@media screen and (max-width: 768px) {
+  .co-con-wrap hr {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.co-con-wrap__form {
+  padding: 2.5% 0 5%;
+}
+@media screen and (max-width: 480px) {
+  .co-con-wrap__form {
+    padding: 2.5% 0 7.5%;
+  }
+}
+.co-con-wrap__form__block {
+  margin: 5% 0;
+}
+@media screen and (max-width: 768px) {
+  .co-con-wrap__form__block {
+    margin: 7.5% 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .co-con-wrap__form__block {
+    margin-bottom: 10%;
+  }
+}
+.co-con-wrap__form__block__ttl p {
+  font-size: clamp(0.813rem, 0.719rem + 0.31vw, 1rem);
+}
+.co-con-wrap__form__block__input {
+  margin: 2.5% 0;
+}
+.co-con-wrap__form__block__input.__radio {
+  margin: 2% 0;
+}
+.co-con-wrap__form__block__input__one {
+  margin-right: 2%;
+  margin: 2% 0;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1024px) {
+  .co-con-wrap__form__block__input__one {
+    width: 40%;
+    margin: 3% 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .co-con-wrap__form__block__input__one {
+    width: 45%;
+    margin: 3.5% 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .co-con-wrap__form__block__input__one {
+    width: 53%;
+  }
+}
+.co-con-wrap__form__block__input__one input {
+  vertical-align: text-bottom;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #eee;
+  width: 20px; /* 任意の幅 */
+  height: 20px; /* 任意の高さ */
+  border-radius: 50%; /* 円形にする */
+  cursor: pointer; /* マウスオーバー時のカーソル */
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .co-con-wrap__form__block__input__one input {
+    width: 10px;
+    height: 10px;
+    vertical-align: baseline;
+  }
+}
+.co-con-wrap__form__block__input__one input:checked::before {
+  content: "";
+  display: block;
+  width: 12px; /* 内側の丸の幅 */
+  height: 12px; /* 内側の丸の高さ */
+  background-color: #0055df; /* 内側の丸の色 */
+  border-radius: 50%; /* 内側の丸を円形にする */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 768px) {
+  .co-con-wrap__form__block__input__one input:checked::before {
+    width: 6px;
+    height: 6px;
+  }
+}
+.co-con-wrap__form__block__input__one label {
+  font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding-left: 2.5%;
+}
+.co-con-wrap__form__block__input__two input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+  font-weight: 400;
+  padding: 2%;
+  letter-spacing: 1px;
+  border: none;
+  background-color: #eee;
+}
+@media screen and (max-width: 480px) {
+  .co-con-wrap__form__block__input__two input {
+    padding: 3%;
+  }
+}
+.co-con-wrap__form__block__input__two__textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+  font-weight: 400;
+  padding: 2%;
+  letter-spacing: 1px;
+  border: none;
+  background-color: #eee;
+  height: 17.5rem;
+}
+@media screen and (max-width: 480px) {
+  .co-con-wrap__form__block__input__two__textarea {
+    padding: 3%;
+  }
+}
+.co-con-wrap__form__btn {
+  margin: 7.5% auto;
+  text-align: center;
+}
+
+.contact-btn {
+  cursor: pointer;
+  border: 1px solid #1b1b1c;
+  background-color: #1b1b1c;
+  color: #fff;
+  font-size: 1rem;
+  padding: 2% 10%;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .contact-btn {
+    font-size: clamp(0.875rem, 0.666rem + 0.7vw, 1rem);
+    padding: 3% 15%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-btn {
+    padding: 3.5% 14%;
+  }
+}
+.contact-btn:hover {
+  color: #1b1b1c;
+  background-color: #fff;
+}

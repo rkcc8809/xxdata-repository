@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.ca-body {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  padding: 5% 0;
+  @include g.mq(tab) {
+    padding: 7.5% 0;
+  }
+  &-wrap {
+    @include g.mq(tab) {
+      width: 87.5%;
+    }
+    @include g.mq(sp) {
+      width: 80%;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2%;
+      @include g.mq(sp) {
+        display: block;
+      }
+      &__item {
+        width: 31.5%;
+
+        &:nth-child(n + 4) {
+          margin-top: 3.5%;
+        }
+        @include g.mq(tab) {
+          width: 48.5%;
+          &:nth-child(n + 3) {
+            margin-top: 3.5%;
+          }
+        }
+        @include g.mq(sp) {
+          margin-top: 3.5%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 10%;
+          width: 90%;
+        }
+        &:nth-child(n + 6) {
+          @include g.mq(sp) {
+            margin-bottom: 3.5%;
+          }
+        }
+        &__link {
+          color: g.$cMain;
+          &__img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            & img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              display: block;
+            }
+          }
+          &__con {
+            box-shadow: 0 4px 4px g.$cBlack-clear2;
+            padding: 2.5% 2.5% 5%;
+            @include g.mq(pc) {
+              padding: 3.5% 2.5% 7%;
+            }
+            @include g.mq(sp) {
+              padding: 2.5% 2.5% 7%;
+            }
+            &__cate {
+              box-sizing: border-box;
+              background-color: g.$cMain;
+              color: g.$cWhite;
+              padding: 3%;
+              margin: 2%;
+              display: inline-block;
+              @include g.mq(pc) {
+                padding: 5%;
+              }
+              @include g.mq(sp) {
+                padding: 3%;
+              }
+              & p {
+                font-size: 0.75rem;
+                @include g.mq(pc) {
+                  font-size: 10px;
+                }
+              }
+            }
+            &__ttl {
+              margin-top: 2.5%;
+              margin-left: 2.5%;
+              & h2 {
+                font-size: 1rem;
+                @include g.mq(pc) {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

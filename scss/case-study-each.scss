@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.cae-head {
+  background-color: g.$cGray-light2;
+  color: g.$cMain;
+  box-sizing: border-box;
+  padding: 5% 0;
+  @include g.mq(tab) {
+    padding: 4.5% 0;
+  }
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include g.mq(tab) {
+      display: block;
+      width: 100%;
+    }
+    &__img {
+      width: 45%;
+      @include g.mq(tab) {
+        margin: 0 auto;
+      }
+      @include g.mq(sp) {
+        width: 75%;
+      }
+      & img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+    &__con {
+      width: 45%;
+      @include g.mq(tab) {
+        margin: 2.5% auto 0;
+      }
+      @include g.mq(sp) {
+        width: 75%;
+      }
+      &__cate {
+        display: inline-block;
+        padding: 3%;
+        background-color: g.$cMain;
+        color: g.$cWhite;
+        @include g.mq(pc) {
+          padding: 4%;
+        }
+        & p {
+          font-size: 0.75rem;
+          font-weight: 500;
+          @include g.mq(pc) {
+            font-size: 11px;
+          }
+          @include g.mq(sp) {
+            font-size: 10px;
+          }
+        }
+      }
+      &__ttl {
+        margin: 3.5% 0;
+        @include g.mq(tab) {
+          margin: 4.5% 0;
+        }
+        & h2 {
+          font-size: g.$font-14-20;
+        }
+      }
+      & hr {
+        border-top: 1px solid g.$cMain;
+        @include g.mq(pc) {
+          margin: 0.5em 0;
+        }
+      }
+      &__list {
+        &__item {
+          display: flex;
+          margin: 3.5% 0;
+          &__left {
+            font-size: 0.875rem;
+            @include g.mq(pc) {
+              font-size: 13px;
+            }
+          }
+          &__right {
+            font-size: 0.875rem;
+            @include g.mq(pc) {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cae-bottom {
+  background-color: g.$cWhite;
+  &-wrap {
+    padding: 5% 0;
+    @include g.mq(tab) {
+      width: 80%;
+    }
+    &__con {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      @include g.mq(sp) {
+        display: block;
+      }
+      &__block {
+        width: 47.5%;
+        &:nth-of-type(3) {
+          margin-top: -11%;
+        }
+        &:nth-of-type(4) {
+          margin-top: 5%;
+        }
+        @include g.mq(sp) {
+          width: 100%;
+        }
+        &.__square {
+          aspect-ratio: 1 / 1;
+          @include g.mq(sp) {
+            margin: 5% 0;
+          }
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+        }
+        &.__rectangle {
+          aspect-ratio: 3 / 4;
+          @include g.mq(sp) {
+            margin: 10% 0;
+          }
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

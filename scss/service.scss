@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.s-advantage {
+  margin: 10% 0 15%;
+  &-line {
+    border-top: 1px solid g.$cBlue;
+    transform: skewY(-5deg);
+    position: relative;
+    z-index: -1;
+  }
+  &-wrap {
+    &__top {
+      &__ttl {
+        text-align: center;
+        display: inline-block;
+        background-color: g.$cMain;
+        padding: 0 2%;
+      }
+    }
+    &__block {
+      margin: 7.5% 0;
+      @include g.mq(sp) {
+        margin: 12.5% 0;
+      }
+      &__head {
+        & h3 {
+          font-size: g.$font-16-48;
+          position: relative;
+          left: 5%;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 1em;
+            background-color: g.$cBlue;
+            left: -5%;
+          }
+        }
+      }
+      &__con {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        margin: 5% 0;
+        @include g.mq(sp) {
+          display: block;
+        }
+        &__img {
+          width: 40%;
+          @include g.mq(sp) {
+            width: 60%;
+            margin: 10% auto;
+          }
+          & img {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+        }
+        &__txt {
+          width: 55%;
+          @include g.mq(sp) {
+            width: 100%;
+          }
+          & p {
+            font-size: g.$font-13-18;
+            line-height: 1.6;
+            font-weight: 500;
+            @include g.mq(tab) {
+              font-size: clamp(0.625rem, 0.311rem + 1.05vw, 0.813rem);
+            }
+            @include g.mq(sp) {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    & hr {
+      border-top: 1px solid g.$cBlue;
+    }
+  }
+}
+
+.s-content {
+  &-wrap {
+    &__ttl {
+      border-bottom: 1px solid g.$cWhite;
+      position: relative;
+    }
+
+    &__body {
+      margin-top: 7.5%;
+      margin-bottom: 12.5%;
+      &__block {
+        margin-top: 12.5%;
+        margin-bottom: 12.5%;
+        width: 89.5%;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        @include g.mq(tab) {
+          width: 91.5%;
+        }
+        @include g.mq(sp) {
+          display: block;
+          width: 90%;
+          margin-right: auto;
+        }
+        &.__second {
+          margin-left: 0;
+          margin-right: auto;
+          flex-direction: row;
+          @include g.mq(sp) {
+            width: 90%;
+            margin-left: auto;
+          }
+        }
+        &__left {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          @include g.mq(pc) {
+            width: 50.5%;
+            gap: 7.5%;
+          }
+          @include g.mq(tab) {
+            gap: 7.5%;
+          }
+          @include g.mq(sp) {
+            width: 100%;
+            margin-top: 7.5%;
+          }
+          &__ttl {
+            text-align: center;
+            @include g.mq(sp) {
+              text-align: left;
+            }
+            & h3 {
+              font-size: g.$font-15-32;
+              text-shadow: 4px 4px 4px g.$cBlue;
+              & span {
+                @include g.font-strong;
+                font-size: g.$font-28-64;
+                margin-right: 3.5%;
+              }
+            }
+          }
+          &__head {
+            @include g.mq(sp) {
+              margin: 5% 0;
+            }
+            & h4 {
+              font-size: g.$font-16-48;
+              line-height: 1.4;
+            }
+          }
+          &__txt {
+            & p {
+              font-size: g.$font-13-18;
+              line-height: 1.6;
+              font-weight: 500;
+              @include g.mq(tab) {
+                font-size: clamp(0.625rem, 0.206rem + 1.39vw, 0.875rem);
+              }
+              @include g.mq(sp) {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+        &__right {
+          width: 45%;
+          @include g.mq(sp) {
+            width: 100%;
+          }
+          &__img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            @include g.mq(sp) {
+              aspect-ratio: 2 / 1;
+            }
+            & img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; /* 画像をコンテナに合わせてカバー */
+
+              display: block;
+            }
+            &::after {
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 100%;
+              top: 24px;
+              left: -24px;
+              background-color: g.$cWhite-clear;
+              z-index: -1;
+              @include g.mq(pc) {
+                top: 12px;
+                left: -12px;
+              }
+              @include g.mq(sp) {
+                top: 8px;
+                left: -8px;
+              }
+            }
+
+            &.__second {
+              &::after {
+                left: 24px;
+                @include g.mq(pc) {
+                  left: 12px;
+                }
+                @include g.mq(sp) {
+                  left: 8px;
+                }
+              }
+            }
+            &__one {
+              object-position: 90% 50%;
+            }
+            &__two {
+              object-position: 47.5% 50%;
+            }
+            &__three {
+              object-position: 90% 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.c-philo {
+  border-top: 1px solid g.$cWhite;
+  margin: 7.5% 0;
+  @include g.mq(sp) {
+    margin: 12.5% 0;
+  }
+  &-wrap {
+    &__ttl {
+      display: inline-block;
+      padding: 0 1.5%;
+      position: relative;
+      left: 35px;
+      transform: translateY(-50%);
+      z-index: 1;
+      background-color: g.$cMain;
+      @include g.mq(sp) {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &__sub {
+        @include g.mq(sp) {
+          text-align: center;
+        }
+      }
+    }
+    &__con {
+      margin: 5% 0;
+      @include g.mq(tab) {
+        margin: 10% 0;
+      }
+      &__img {
+        aspect-ratio: 2 / 1;
+        width: 52.5%;
+        @include g.mq(tab) {
+          width: 85%;
+        }
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        &.__first {
+          margin-left: auto;
+          margin-right: 0;
+        }
+        &.__second {
+          margin-top: -15%;
+          @include g.mq(tab) {
+            margin-top: -5%;
+          }
+        }
+      }
+      &__txt {
+        width: 70%;
+        background-color: g.$cWhite;
+        box-shadow: 0 4px 15px g.$cGray-light;
+        box-sizing: border-box;
+        padding: 2% 3.5%;
+        margin-top: -2.5%;
+        margin-left: auto;
+        margin-right: 0;
+        position: relative;
+        z-index: 1;
+        @include g.mq(pc) {
+          width: 85%;
+        }
+        @include g.mq(tab) {
+          width: 95%;
+        }
+        @include g.mq(sp) {
+          width: 100%;
+          padding: 3.5% 5%;
+        }
+        & p {
+          color: g.$cMain;
+          font-size: g.$font-13-18;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+.c-greet {
+  margin-top: 10%;
+  @include g.mq(sp) {
+    margin-top: 22.5%;
+  }
+
+  &-wrap {
+    &__img {
+      width: 25%;
+      aspect-ratio: 10 / 11;
+      margin-left: 10.75%;
+      position: relative;
+      z-index: 2;
+      @include g.mq(tab) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include g.mq(sp) {
+        width: 50%;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: 75% 50%;
+      }
+    }
+    &__body {
+      margin-top: -28.5%;
+      padding: 6% 0;
+      background-color: g.$cWhite;
+      color: g.$cMain;
+      clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
+      display: flex;
+      justify-content: space-between;
+      @include g.mq(tab) {
+        padding: 30% 0 7.5%;
+        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+      }
+      @include g.mq(sp) {
+        margin-top: -53%;
+        padding: 55% 0 7.5%;
+        clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+      }
+
+      &__con {
+        width: 45%;
+        margin-top: 2.5%;
+        margin-left: auto;
+        margin-right: 10.75%;
+        @include g.mq(tab) {
+          margin-right: auto;
+          width: 68%;
+          text-align: center;
+        }
+        @include g.mq(sp) {
+          width: 90%;
+        }
+        &__ttl {
+          display: inline-block;
+          text-align: center;
+        }
+        &__txt {
+          margin: 5% 0;
+          @include g.mq(tab) {
+            text-align: left;
+          }
+          & p {
+            font-size: g.$font-13-18;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-info {
+  margin: 7.5% 0;
+  @include g.mq(sp) {
+    margin: 15% 0;
+  }
+  &-wrap {
+    border-top: 1px solid g.$cBlue;
+    &__top {
+      &__ttl {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        background-color: g.$cMain;
+        transform: translateY(-25%);
+        padding: 0 1.5%;
+        @include g.mq(sp) {
+          left: 50%;
+          transform: translate(-50%, -25%);
+        }
+      }
+    }
+    &__con {
+      margin-top: 5%;
+      &__list {
+        & hr {
+          @include g.mq(sp) {
+            margin: 0.5em 0;
+          }
+        }
+        &__item {
+          display: flex;
+          align-items: center;
+          padding: 0.5em 0;
+          @include g.mq(pc) {
+            padding: 0.25em 0;
+          }
+          & p {
+            font-size: g.$font-12-16;
+            font-weight: 500;
+            @include g.mq(sp) {
+              font-size: clamp(0.563rem, 0.188rem + 1.88vw, 0.75rem);
+            }
+          }
+          &__left {
+            width: 20%;
+            padding-left: 5%;
+            @include g.mq(pc) {
+              padding-left: 2.5%;
+            }
+            @include g.mq(sp) {
+              width: 22%;
+              padding-left: 1.5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-map {
+  &-wrap {
+    height: 50dvh;
+    @include g.mq(pc) {
+      height: 25dvh;
+    }
+    & iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+}

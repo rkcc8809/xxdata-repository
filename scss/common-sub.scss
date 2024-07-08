@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.bg-white {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+}
+
+.u-top {
+  &-wrap {
+    &__img {
+      width: 85%;
+      height: 30dvh;
+      margin-left: auto;
+      margin-right: 0;
+      background-size: cover;
+      background-position: 50%;
+      position: relative;
+      z-index: 0;
+      @include g.mq(pc) {
+        height: 16dvh;
+      }
+      @include g.mq(sp) {
+        height: 60dvh;
+      }
+      &.__service {
+        background-image: url("../img/service-fv.jpeg");
+      }
+      &.__company {
+        background-image: url("../img/top-company.jpeg");
+      }
+      &.__case-study {
+        background-image: url("../img/case-study-fv.jpeg");
+      }
+      &.__news {
+        background-image: url("../img/news-fv.jpeg");
+      }
+      &.__contact {
+        background-image: url("../img/contact-fv.jpeg");
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: g.$cBlack-clear;
+        z-index: 1;
+      }
+      &__ttl {
+        position: absolute;
+        top: 40%;
+        left: -5%;
+        transform: translateY(-50%);
+        z-index: 2;
+        @include g.mq(tab) {
+          bottom: 7.5%;
+        }
+        @include g.mq(sp) {
+          top: 78%;
+          left: -7.5%;
+        }
+        & h1 {
+          font-size: g.$font-24-48;
+          @include g.font-en;
+          & span {
+            font-size: g.$font-12-16;
+            display: block;
+            position: relative;
+            margin-left: 50px;
+            line-height: 3;
+            @include g.mq(tab) {
+              margin-left: 40px;
+            }
+            @include g.mq(sp) {
+              margin-left: 30px;
+            }
+            &::before {
+              position: absolute;
+              content: "";
+              display: block;
+              width: 30px;
+              height: 1px;
+              background-color: g.$cWhite;
+              top: 50%;
+              transform: translateY(-50%);
+              left: -50px;
+              @include g.mq(tab) {
+                width: 25px;
+                left: -40px;
+              }
+              @include g.mq(sp) {
+                width: 20px;
+                left: -30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  &-wrap {
+    &__nav {
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        &__item {
+          & a {
+            font-size: g.$font-11-16;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          &:not(:last-of-type):after {
+            content: "-";
+            margin: 0 10px;
+            width: 1rem;
+            color: g.$cWhite;
+            @include g.mq(pc) {
+              margin: 0 5px;
+            }
+
+            @include g.mq(sp) {
+              margin: 0 3.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb.__flip {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  & a {
+    color: g.$cMain;
+  }
+}
+
+.breadcrumb-wrap__nav__list__item.__flip:not(:last-of-type):after {
+  color: g.$cMain;
+}
+
+.u-ttl {
+  font-size: g.$font-16-40;
+  display: inline-block;
+  & span {
+    font-size: g.$font-10-20;
+    display: block;
+    line-height: 2.5;
+  }
+}
+
+.u-ttl-2 {
+  @include g.mq(sp) {
+    text-align: center;
+  }
+  &__first {
+    font-size: g.$font-16-40;
+    margin-right: 1%;
+    position: relative;
+    border-bottom: 3px solid g.$cBlue;
+    padding-bottom: 1.5%;
+    line-height: 2.5;
+    @include g.mq(sp) {
+      border-bottom: 2px solid g.$cBlue;
+    }
+  }
+
+  &__second {
+    font-size: g.$font-10-16;
+  }
+}
+
+.u-ttl__sub {
+  display: block;
+  line-height: 1.4;
+  font-size: g.$font-10-20;
+}
+
+.a-switch {
+  padding-top: 5%;
+  background-color: g.$cWhite;
+  @include g.mq(tab) {
+    padding-top: 7.5%;
+  }
+  &-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    @include g.mq(tab) {
+      justify-content: center;
+      width: 87.5%;
+    }
+    @include g.mq(sp) {
+      width: 90%;
+    }
+
+    &__block {
+      width: 15%;
+      text-align: center;
+      @include g.mq(pc) {
+        width: 20%;
+      }
+      @include g.mq(tab) {
+        width: 25%;
+      }
+      @include g.mq(sp) {
+        width: 35%;
+      }
+      &.__third {
+        @include g.mq(sp) {
+          margin-right: 31.5vw;
+        }
+      }
+
+      &__con {
+        margin-right: 5%;
+        margin-left: 5%;
+
+        @include g.mq(sp) {
+          margin-right: 3.5%;
+          margin-left: 3.5%;
+          margin-bottom: 5%;
+        }
+
+        & a {
+          width: 100%;
+          display: inline-block;
+          border: 1px solid g.$cMain;
+          background-color: g.$cWhite;
+          color: g.$cMain;
+          line-height: 3;
+          position: relative;
+          font-size: g.$font-12-14-tab;
+          font-weight: 500;
+          &:hover {
+            box-shadow: 0 4px 4px g.$cBlack-clear;
+            transform: translateY(-5%);
+          }
+        }
+        & .__now {
+          border: 1px solid g.$cBlue;
+          background-color: g.$cBlue;
+          color: g.$cWhite;
+        }
+      }
+    }
+  }
+}
+
+.a-page {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  padding-bottom: 5%;
+  @include g.mq(tab) {
+    padding-bottom: 7.5%;
+  }
+  @include g.mq(sp) {
+    padding-bottom: 12.5%;
+  }
+  &-wrap {
+    &__btn {
+      &__list {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 3.5%;
+        &__item {
+          & a {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: g.$font-12-20;
+            width: 2.25em;
+            height: 2.25em;
+            color: g.$cMain;
+            &.__now {
+              cursor: default;
+              pointer-events: none;
+              background-color: g.$cMain;
+              color: g.$cWhite;
+            }
+            &.__next {
+              white-space: nowrap;
+              width: 100%;
+              & span {
+                margin-right: 2%;
+              }
+              & svg {
+                color: g.$cMain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.e-page {
+  box-sizing: border-box;
+  padding-top: 2.5%;
+  padding-bottom: 7.5%;
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  @include g.mq(tab) {
+    padding-bottom: 10.5%;
+  }
+  @include g.mq(sp) {
+    padding-bottom: 15%;
+  }
+
+  &-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__block {
+      width: 20%;
+      @include g.mq(pc) {
+        width: 27.5%;
+      }
+      @include g.mq(tab) {
+        width: 30%;
+      }
+      @include g.mq(sp) {
+        width: 33%;
+      }
+
+      &__anker {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5%;
+        @include g.mq(sp) {
+          justify-content: center;
+        }
+        &__txt {
+          font-size: g.$font-14-24;
+          color: g.$cMain;
+        }
+
+        &.__second {
+          justify-content: flex-start;
+          @include g.mq(sp) {
+            justify-content: center;
+          }
+        }
+
+        & svg {
+          font-size: g.$font-14-24;
+          vertical-align: bottom;
+          color: g.$cMain;
+        }
+      }
+      &__center {
+        text-align: center;
+
+        &__txt {
+          font-size: g.$font-14-24;
+          color: g.$cMain;
+        }
+      }
+    }
+  }
+}
+
+.__rev {
+  transform: rotate(180deg);
+}

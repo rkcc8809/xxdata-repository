@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.co-summary {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  padding: 5% 0 2.5%;
+  @include g.mq(tab) {
+    padding: 5% 0 5%;
+  }
+  &-wrap {
+    @include g.mq(tab) {
+      width: 82.5%;
+    }
+    &__ttl {
+      & p {
+        font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+        font-weight: 500;
+        line-height: 1.6;
+        &.__contact {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.co-con {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  &-wrap {
+    @include g.mq(tab) {
+      width: 82.5%;
+    }
+    & hr {
+      width: 65vw;
+
+      border-top: 1px solid g.$cMain;
+      background-color: g.$cWhite;
+      margin: 0;
+      margin-left: -5%;
+      @include g.mq(tab) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    &__form {
+      padding: 2.5% 0 5%;
+      @include g.mq(sp) {
+        padding: 2.5% 0 7.5%;
+      }
+
+      &__block {
+        margin: 5% 0;
+        @include g.mq(tab) {
+          margin: 7.5% 0;
+        }
+        @include g.mq(sp) {
+          margin-bottom: 10%;
+        }
+        &__ttl {
+          & p {
+            font-size: g.$font-13-16;
+          }
+        }
+        &__input {
+          margin: 2.5% 0;
+          &.__radio {
+            margin: 2% 0;
+          }
+          &__one {
+            margin-right: 2%;
+            margin: 2% 0;
+            white-space: nowrap;
+            @include g.mq(pc) {
+              width: 40%;
+              margin: 3% 0;
+            }
+            @include g.mq(tab) {
+              width: 45%;
+              margin: 3.5% 0;
+            }
+            @include g.mq(sp) {
+              width: 53%;
+            }
+            & input {
+              vertical-align: text-bottom;
+              appearance: none;
+              background-color: g.$cGray-light2;
+              width: 20px; /* 任意の幅 */
+              height: 20px; /* 任意の高さ */
+              border-radius: 50%; /* 円形にする */
+              cursor: pointer; /* マウスオーバー時のカーソル */
+              position: relative;
+              @include g.mq(tab) {
+                width: 10px;
+                height: 10px;
+                vertical-align: baseline;
+              }
+              &:checked::before {
+                content: "";
+                display: block;
+                width: 12px; /* 内側の丸の幅 */
+                height: 12px; /* 内側の丸の高さ */
+                background-color: g.$cBlue; /* 内側の丸の色 */
+                border-radius: 50%; /* 内側の丸を円形にする */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include g.mq(tab) {
+                  width: 6px;
+                  height: 6px;
+                }
+              }
+            }
+            & label {
+              font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+              font-weight: 400;
+              letter-spacing: 1px;
+              padding-left: 2.5%;
+            }
+          }
+          &__two {
+            & input {
+              box-sizing: border-box;
+              display: block;
+              width: 100%;
+              font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+              font-weight: 400;
+              padding: 2%;
+              letter-spacing: 1px;
+              border: none;
+              background-color: g.$cGray-light2;
+              @include g.mq(sp) {
+                padding: 3%;
+              }
+            }
+            &__textarea {
+              display: block;
+              width: 100%;
+              box-sizing: border-box;
+              font-size: clamp(0.813rem, 0.598rem + 0.45vw, 1rem);
+              font-weight: 400;
+              padding: 2%;
+              letter-spacing: 1px;
+              border: none;
+              background-color: g.$cGray-light2;
+              height: 17.5rem;
+              @include g.mq(sp) {
+                padding: 3%;
+              }
+            }
+          }
+        }
+      }
+      &__btn {
+        margin: 7.5% auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.contact-btn {
+  cursor: pointer;
+  border: 1px solid g.$cMain;
+  background-color: g.$cMain;
+  color: g.$cWhite;
+  font-size: 1rem;
+  padding: 2% 10%;
+  transition: all 0.3s;
+  @include g.mq(tab) {
+    font-size: clamp(0.875rem, 0.666rem + 0.7vw, 1rem);
+    padding: 3% 15%;
+  }
+  @include g.mq(sp) {
+    padding: 3.5% 14%;
+  }
+  &:hover {
+    color: g.$cMain;
+    background-color: g.$cWhite;
+  }
+}

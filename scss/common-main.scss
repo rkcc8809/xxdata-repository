@@ -1,0 +1,559 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+// common-main
+@include g.mq(pc_L) {
+  .__pc {
+    display: none;
+  }
+
+  .__tab {
+    display: none;
+  }
+
+  .__sp {
+    display: none;
+  }
+}
+
+@include g.mq(pc) {
+  .__pc {
+    display: inline-block;
+  }
+
+  .__tab {
+    display: none;
+  }
+
+  .__sp {
+    display: none;
+  }
+}
+
+@include g.mq(tab) {
+  .__pc {
+    display: none;
+  }
+
+  .__tab {
+    display: inline-block;
+  }
+
+  .__sp {
+    display: none;
+  }
+}
+
+@include g.mq(sp) {
+  .__pc {
+    display: none;
+  }
+
+  .__tab {
+    display: none;
+  }
+
+  .__sp {
+    display: inline-block;
+  }
+}
+
+.__inner {
+  width: 80%;
+  margin: 0 auto;
+  @include g.mq(sp) {
+    width: 90%;
+  }
+}
+
+.__inner-under {
+  width: 78.5%;
+  margin: 0 auto;
+  @include g.mq(tab) {
+    width: 82.5%;
+  }
+  @include g.mq(sp) {
+    width: 90%;
+  }
+}
+
+.__inner-each {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.__section-1 {
+  margin: 5% 0;
+}
+
+.__section-2 {
+  margin: 2.5% 0;
+}
+
+.__section-main {
+  padding: 7.5% 0;
+}
+
+.__section-bread {
+  padding: 1.5% 0;
+  @include g.mq(tab) {
+    padding: 2.25% 0;
+  }
+}
+
+// header
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: g.$cMain;
+  @include g.mq(sp) {
+    height: 60px;
+  }
+  &-wrap {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    z-index: 100;
+    height: 80px;
+    @include g.mq(sp) {
+      height: 60px;
+    }
+
+    &__logo {
+      padding-left: 2.5%;
+
+      @include g.mq(tab) {
+        padding-left: 3.5%;
+      }
+
+      @include g.mq(sp) {
+        padding-left: 4.5%;
+      }
+
+      & a {
+        @include g.font-logo;
+        font-size: 1.5rem;
+        @include g.mq(sp) {
+          font-size: 1rem;
+        }
+      }
+      & a:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &__nav {
+      width: 40%;
+      padding-right: 4%;
+
+      @include g.mq(pc) {
+        width: 55%;
+      }
+
+      @include g.mq(tab) {
+        display: none;
+      }
+
+      &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__item {
+          & a {
+            @include g.font-en;
+            display: block;
+            font-size: g.$font-12-16-tab;
+            position: relative;
+          }
+          & a:hover {
+            opacity: 0.8;
+          }
+          & a::after {
+            position: absolute;
+            content: "";
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            background-color: g.$cBlue;
+            transition: all 0.3s;
+            transform: scale(0, 1);
+            transform-origin: center top;
+          }
+          & a:hover::after {
+            transform: scale(1, 1);
+            height: 3.5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.h-open {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  cursor: pointer;
+  width: 80px;
+  height: 100%;
+  text-align: center;
+  @include g.mq(sp) {
+    width: 60px;
+  }
+
+  & span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    right: 24px;
+    height: 2.5px;
+    border-radius: 2px;
+    background-color: g.$cWhite;
+    @include g.mq(sp) {
+      right: 16px;
+    }
+
+    &:nth-of-type(1) {
+      width: 50%;
+      top: 28px;
+      @include g.mq(sp) {
+        top: 19px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      width: 35%;
+      top: 38px;
+      @include g.mq(sp) {
+        top: 29px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      width: 20%;
+      top: 48px;
+      @include g.mq(sp) {
+        top: 39px;
+      }
+    }
+  }
+
+  &.active span:nth-of-type(1) {
+    top: 33px;
+    right: 24px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 45%;
+    @include g.mq(sp) {
+      top: 24px;
+      right: 16px;
+    }
+  }
+
+  &.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  &.active span:nth-of-type(3) {
+    top: 45px;
+    right: 24px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 45%;
+    @include g.mq(sp) {
+      top: 36px;
+      right: 16px;
+    }
+  }
+
+  @include g.mq(tab) {
+    display: block;
+  }
+}
+
+#h-nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 50%;
+  height: 100dvh;
+  transition: all 0.6s;
+  background-color: g.$cMain;
+
+  @include g.mq(sp) {
+    width: 100%;
+  }
+
+  &__list__first {
+    position: absolute;
+    z-index: 999;
+    top: 2.75%;
+    left: 10%;
+
+    & li {
+      & a {
+        @include g.font-logo;
+        font-size: clamp(1rem, 0.581rem + 1.39vw, 1.25rem);
+        @include g.mq(sp) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  &__list__second {
+    position: absolute;
+    z-index: 999;
+    top: 30%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    & li {
+      margin: 40% 0;
+      text-align: center;
+      @include g.mq(sp) {
+        margin: 35% 0;
+      }
+
+      & a {
+        @include g.font-en;
+        display: block;
+        font-size: clamp(1rem, 0.581rem + 1.39vw, 1.25rem);
+        @include g.mq(sp) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+#h-nav.panelactive {
+  right: 0;
+}
+
+.section-set {
+  position: relative;
+  transform: translateY(80px);
+}
+
+.b-ttl {
+  @include g.font-en;
+  font-size: g.$font-16-32;
+}
+
+.b-ttl__sub {
+  @include g.font-jp;
+  font-size: g.$font-10-16;
+  margin-left: 0.5%;
+}
+
+.btn {
+  width: clamp(14.375rem, 2.026rem + 19.28vw, 19.375rem);
+  @include g.mq(tab) {
+    width: clamp(9.375rem, 4.976rem + 14.63vw, 12rem);
+  }
+
+  & a {
+    display: block;
+    background-color: transparent;
+    color: g.$cWhite;
+    border: 1px solid g.$cWhite;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-size: g.$font-16-32;
+    @include g.font-en;
+    line-height: 1.8;
+    & span {
+      vertical-align: 9px;
+      margin-right: 20px;
+      @include g.mq(pc) {
+        vertical-align: 7px;
+      }
+      @include g.mq(tab) {
+        vertical-align: 5px;
+      }
+    }
+    & svg {
+      vertical-align: 1px;
+    }
+  }
+}
+
+.r-btn {
+  margin-left: auto;
+}
+
+.footer {
+  padding: 12.5% 0 2.5%;
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
+  @include g.mq(tab) {
+    padding: 15% 0 2.5%;
+  }
+  @include g.mq(sp) {
+    padding: 20% 0 2.5%;
+    clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  &-wrap {
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      @include g.mq(tab) {
+        width: 87.5%;
+      }
+      @include g.mq(sp) {
+        width: 90%;
+      }
+      &__ttl {
+        width: 30%;
+        @include g.mq(tab) {
+          width: 40%;
+        }
+        @include g.mq(sp) {
+          width: 60%;
+        }
+        & .b-ttl__sub {
+          margin-left: 2%;
+        }
+      }
+      &__btn {
+        width: clamp(2.188rem, -0.313rem + 5.21vw, 4.375rem);
+        height: clamp(2.188rem, -0.313rem + 5.21vw, 4.375rem);
+        transform: rotate(45deg);
+        @include g.mq(tab) {
+          margin-right: 5%;
+        }
+
+        & a {
+          background-color: g.$cMain;
+          color: g.$cWhite;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          & svg {
+            transform: rotate(-45deg);
+            width: clamp(1.313rem, -0.188rem + 3.13vw, 2.625rem);
+            height: clamp(1.313rem, -0.188rem + 3.13vw, 2.625rem);
+          }
+        }
+      }
+    }
+    &__flow {
+      &__list {
+        display: flex;
+        padding-inline: 0;
+        margin-inline: 0;
+        gap: 0;
+        overflow: hidden;
+        margin-top: 5%;
+        &__item {
+          @include g.font-strong;
+          color: g.$cMain;
+          font-size: clamp(1.5rem, 5vw, 4.5rem);
+          white-space: nowrap;
+          padding: 0 1em 1em 0;
+          margin: 0;
+          animation: marquee-left 16s linear infinite;
+        }
+      }
+    }
+    &__btn {
+      @include g.mq(tab) {
+        width: 90%;
+      }
+      &__square {
+        width: clamp(9.375rem, 4.063rem + 17.71vw, 20rem);
+        height: clamp(2.5rem, 1.25rem + 4.17vw, 5rem);
+      }
+
+      & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: g.$cMain;
+        gap: 5%;
+        & span {
+          font-size: g.$font-11-24;
+          @include g.font-en;
+        }
+        & svg {
+          width: clamp(1.125rem, 0.688rem + 1.46vw, 2rem);
+          height: clamp(1.125rem, 0.688rem + 1.46vw, 2rem);
+        }
+      }
+    }
+    &__link {
+      margin-top: 5%;
+      @include g.mq(tab) {
+        width: 90%;
+      }
+      &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid g.$cMain;
+        padding-top: 2.5%;
+        @include g.mq(sp) {
+          display: block;
+        }
+        &__list {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 40%;
+          @include g.mq(pc) {
+            width: 47.5%;
+          }
+          @include g.mq(tab) {
+            width: 55%;
+          }
+          @include g.mq(sp) {
+            width: 100%;
+          }
+          &__item {
+            & a {
+              color: g.$cMain;
+              font-size: g.$font-12-15-tab;
+              @include g.mq(tab) {
+                font-size: clamp(0.625rem, 0.416rem + 0.7vw, 0.75rem);
+              }
+            }
+          }
+        }
+        &__copyright {
+          @include g.mq(sp) {
+            text-align: center;
+            margin: 5% 0;
+          }
+          & small {
+            color: g.$cMain;
+            font-size: g.$font-12-15-tab;
+            @include g.mq(tab) {
+              font-size: clamp(0.625rem, 0.416rem + 0.7vw, 0.75rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes marquee-left {
+  100% {
+    transform: translateX(-100%);
+  }
+}

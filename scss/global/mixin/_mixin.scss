@@ -1,0 +1,22 @@
+@use "../setting/" as *;
+
+
+@mixin font-jp {
+  font-family: $font-noto;
+  font-weight: 700;
+}
+
+@mixin font-en {
+  font-family: $font-lato;
+  font-weight: 700;
+}
+
+@mixin font-logo {
+  font-family: $font-abril;
+  font-weight: 400;
+}
+
+@mixin font-strong {
+  font-family: $font-anton;
+  font-weight: 400;
+}

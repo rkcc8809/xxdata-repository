@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.n-con {
+  background-color: g.$cWhite;
+  color: g.$cMain;
+  &-wrap {
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+    @include g.mq(sp) {
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+    &__list {
+      &__item {
+        & hr {
+          border-top: 1px solid g.$cMain;
+        }
+        &__link {
+          &__cate {
+            display: inline-block;
+            background-color: g.$cMain;
+            box-sizing: border-box;
+            padding: 0.75% 2%;
+            @include g.mq(sp) {
+              padding: 2% 5%;
+            }
+            & p {
+              font-size: 0.75rem;
+              color: g.$cWhite;
+              font-weight: 500;
+            }
+          }
+          &__date {
+            display: inline-block;
+            margin-left: 1%;
+            & p {
+              font-size: 0.75rem;
+              color: g.$cMain;
+              font-weight: 500;
+            }
+          }
+          &__ttl {
+            margin: 1.5% 0;
+            @include g.mq(tab) {
+              margin: 2.5% 0 3.5%;
+            }
+            & h2 {
+              font-size: 1rem;
+              color: g.$cMain;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

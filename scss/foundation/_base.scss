@@ -1,0 +1,25 @@
+@use "../global/" as *;
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @include font-jp;
+  line-height: 1;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: $cWhite;
+  background-color: $cMain;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: $cWhite;
+}
+
+li {
+  list-style: none;
+}
