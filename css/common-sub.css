@@ -196,11 +196,12 @@ li {
   margin-right: 1%;
   position: relative;
   border-bottom: 3px solid #0055df;
-  padding-bottom: 1.5%;
+  padding-bottom: 1.4%;
   line-height: 2.5;
 }
 @media screen and (max-width: 480px) {
   .u-ttl-2__first {
+    padding-bottom: 1.5%;
     border-bottom: 2px solid #0055df;
   }
 }
@@ -395,6 +396,12 @@ li {
     justify-content: center;
   }
 }
+.e-page-wrap__block__anker a {
+  transition: all 0.3s;
+}
+.e-page-wrap__block__anker a:hover {
+  opacity: 0.7;
+}
 .e-page-wrap__block__anker__txt {
   font-size: clamp(0.875rem, 0.563rem + 1.04vw, 1.5rem);
   color: #1b1b1c;
@@ -414,6 +421,12 @@ li {
 }
 .e-page-wrap__block__center {
   text-align: center;
+}
+.e-page-wrap__block__center a {
+  transition: all 0.3s;
+}
+.e-page-wrap__block__center a:hover {
+  opacity: 0.7;
 }
 .e-page-wrap__block__center__txt {
   font-size: clamp(0.875rem, 0.563rem + 1.04vw, 1.5rem);

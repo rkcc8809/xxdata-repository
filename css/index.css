@@ -91,7 +91,7 @@ li {
 .top-wrap__ttl h1 {
   font-family: "Anton", sans-serif;
   font-weight: 400;
-  font-size: clamp(1.5rem, -0.25rem + 5.83vw, 5rem);
+  font-size: clamp(1.5rem, -0.75rem + 7.5vw, 6rem);
   line-height: 1.4;
   overflow: hidden;
   -webkit-animation: fadeIn 0.5s forwards;
@@ -321,6 +321,9 @@ li {
   left: 0;
 }
 .about-wrap__con__block__box__right__img {
+  background-image: url("../img/top-service.jpeg");
+  background-size: cover;
+  z-index: -1;
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
@@ -330,6 +333,7 @@ li {
 .about-wrap__con__block__box__right__img.__second {
   -webkit-clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 40% 100%);
           clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 40% 100%);
+  background-image: url("/img/top-company.jpeg");
 }
 .about-wrap__con__block__box__right__img::after {
   position: absolute;
@@ -407,14 +411,37 @@ li {
   }
 }
 .case-wrap__top__link a {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-flex;
   align-items: center;
-  gap: 2%;
+  gap: 0.2em;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .case-wrap__top__link a {
+    gap: 0.1em;
+  }
 }
 .case-wrap__top__link a svg {
   width: clamp(0.75rem, -0.125rem + 2.92vw, 2.5rem);
   height: clamp(0.75rem, -0.125rem + 2.92vw, 2.5rem);
+}
+.case-wrap__top__link a:hover {
+  transition: all 0.3s;
+}
+.case-wrap__top__link a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: #fff;
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: left top;
+}
+.case-wrap__top__link a:hover::after {
+  transform: scale(0.95, 1);
 }
 .case-wrap__bottom__con__img {
   width: 100%;
@@ -572,21 +599,41 @@ li {
 @media screen and (max-width: 480px) {
   .news-wrap__top__link {
     margin-top: 5%;
+    text-align: right;
   }
 }
 .news-wrap__top__link a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 2%;
+  position: relative;
+  gap: 0.2em;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .news-wrap__top__link a {
-    justify-content: flex-end;
+    gap: 0.1em;
   }
 }
 .news-wrap__top__link a svg {
   width: clamp(0.75rem, -0.125rem + 2.92vw, 2.5rem);
   height: clamp(0.75rem, -0.125rem + 2.92vw, 2.5rem);
+}
+.news-wrap__top__link a:hover {
+  transition: all 0.3s;
+}
+.news-wrap__top__link a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: #fff;
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: left top;
+}
+.news-wrap__top__link a:hover::after {
+  transform: scale(0.92, 1);
 }
 .news-wrap__bottom {
   margin-top: 10%;
@@ -608,9 +655,13 @@ li {
 .news-wrap__bottom__list__item a {
   display: flex;
   align-items: center;
+  transition: all 0.3s;
 }
 .news-wrap__bottom__list__item a p {
   font-size: clamp(0.688rem, 0.531rem + 0.52vw, 1rem);
+}
+.news-wrap__bottom__list__item a:hover {
+  opacity: 0.7;
 }
 .news-wrap__bottom__list hr {
   border-top: 1px solid #fff;

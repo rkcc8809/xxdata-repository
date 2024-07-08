@@ -168,9 +168,10 @@
     margin-right: 1%;
     position: relative;
     border-bottom: 3px solid g.$cBlue;
-    padding-bottom: 1.5%;
+    padding-bottom: 1.4%;
     line-height: 2.5;
     @include g.mq(sp) {
+      padding-bottom: 1.5%;
       border-bottom: 2px solid g.$cBlue;
     }
   }
@@ -348,6 +349,12 @@
         @include g.mq(sp) {
           justify-content: center;
         }
+        & a {
+          transition: all 0.3s;
+        }
+        & a:hover {
+          opacity: 0.7;
+        }
         &__txt {
           font-size: g.$font-14-24;
           color: g.$cMain;
@@ -368,6 +375,12 @@
       }
       &__center {
         text-align: center;
+        & a {
+          transition: all 0.3s;
+        }
+        & a:hover {
+          opacity: 0.7;
+        }
 
         &__txt {
           font-size: g.$font-14-24;

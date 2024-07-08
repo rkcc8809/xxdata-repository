@@ -18,13 +18,18 @@
       &__item {
         & hr {
           border-top: 1px solid g.$cMain;
+          margin: 0.5em 0;
         }
         &__link {
+          transition: all 0.3s;
+          &:hover {
+          opacity: 0.7;
+          }
           &__cate {
             display: inline-block;
             background-color: g.$cMain;
             box-sizing: border-box;
-            padding: 0.75% 2%;
+            padding: 0.75% 1.5%;
             @include g.mq(sp) {
               padding: 2% 5%;
             }
@@ -44,10 +49,8 @@
             }
           }
           &__ttl {
-            margin: 1.5% 0;
-            @include g.mq(tab) {
-              margin: 2.5% 0 3.5%;
-            }
+            padding: 0.75em 0;
+            
             & h2 {
               font-size: 1rem;
               color: g.$cMain;

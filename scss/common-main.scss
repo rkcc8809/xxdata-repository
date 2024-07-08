@@ -121,6 +121,10 @@
     background-color: transparent;
     z-index: 100;
     height: 80px;
+    transition: background-color 0.1s;
+    &.bg-main {
+        background-color: g.$cMain;
+      }
     @include g.mq(sp) {
       height: 60px;
     }
@@ -172,17 +176,15 @@
             font-size: g.$font-12-16-tab;
             position: relative;
           }
-          & a:hover {
-            opacity: 0.8;
-          }
+          
           & a::after {
             position: absolute;
             content: "";
-            bottom: -5px;
+            bottom: -8px;
             left: 0;
             width: 100%;
             height: 2.5px;
-            background-color: g.$cBlue;
+            background-color: g.$cWhite;
             transition: all 0.3s;
             transform: scale(0, 1);
             transform-origin: center top;
@@ -361,8 +363,13 @@
     width: clamp(9.375rem, 4.976rem + 14.63vw, 12rem);
   }
 
-  & a {
-    display: block;
+  
+}
+
+.def-btn {
+  position: relative;
+  overflow: hidden;
+  display: block;
     background-color: transparent;
     color: g.$cWhite;
     border: 1px solid g.$cWhite;
@@ -372,21 +379,51 @@
     font-size: g.$font-16-32;
     @include g.font-en;
     line-height: 1.8;
-    & span {
-      vertical-align: 9px;
+
+  & span {
+    position: relative;
+    z-index: 3;
+    vertical-align: 9px;
       margin-right: 20px;
+    
       @include g.mq(pc) {
         vertical-align: 7px;
       }
+    
       @include g.mq(tab) {
         vertical-align: 5px;
       }
-    }
-    & svg {
+  }
+  & svg {
+    position: relative;
+      z-index: 3;
       vertical-align: 1px;
-    }
   }
 }
+
+.def-btn:hover {
+  opacity: 1;
+  color: g.$cMain;
+}
+
+.bgleft::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: g.$cWhite;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+}
+
+.bgleft:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
 
 .r-btn {
   margin-left: auto;
@@ -446,6 +483,12 @@
             transform: rotate(-45deg);
             width: clamp(1.313rem, -0.188rem + 3.13vw, 2.625rem);
             height: clamp(1.313rem, -0.188rem + 3.13vw, 2.625rem);
+            transition: transform 0.3s ease;
+          }
+          &:hover {
+            & svg {
+              transform: rotate(-45deg) translateY(-20%);
+            }
           }
         }
       }
@@ -465,7 +508,7 @@
           white-space: nowrap;
           padding: 0 1em 1em 0;
           margin: 0;
-          animation: marquee-left 16s linear infinite;
+          animation: marquee-left 35s linear infinite;
         }
       }
     }
@@ -485,7 +528,9 @@
         width: 100%;
         height: 100%;
         background-color: g.$cMain;
+        border: 1px solid g.$cMain;
         gap: 5%;
+        transition: all 0.3s;
         & span {
           font-size: g.$font-11-24;
           @include g.font-en;
@@ -493,6 +538,15 @@
         & svg {
           width: clamp(1.125rem, 0.688rem + 1.46vw, 2rem);
           height: clamp(1.125rem, 0.688rem + 1.46vw, 2rem);
+          transition: all 0.3s;
+        }
+        &:hover {
+          background-color: g.$cWhite;
+          color: g.$cMain;
+          border: 1px solid g.$cMain;
+          & svg {
+            transform: translateX(30%);
+          }
         }
       }
     }
@@ -528,9 +582,28 @@
             & a {
               color: g.$cMain;
               font-size: g.$font-12-15-tab;
+              position: relative;
               @include g.mq(tab) {
                 font-size: clamp(0.625rem, 0.416rem + 0.7vw, 0.75rem);
               }
+            }
+            & a:hover {
+              transition: all 0.3s;
+            }
+            & a::after {
+              content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 2.5px;
+                background: g.$cMain;
+                transition: all 0.3s;
+                transform: scale(0, 1);
+                transform-origin: center top;
+            }
+            & a:hover::after {
+              transform: scale(1, 1);
             }
           }
         }
@@ -555,5 +628,103 @@
 @keyframes marquee-left {
   100% {
     transform: translateX(-100%);
+  }
+}
+
+/* フェードアップのスタイル */
+.fadeUp {
+  animation: fadeUpAnime 0.8s forwards;
+  /* fadeUpAnimeを0.8秒で一回実行 */
+  opacity: 0;
+}
+
+/* フェードレフトのスタイル */
+.fadeLeft {
+  animation: fadeLeftAnime 0.8s forwards;
+  /* fadeLeftAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* フェードライトのスタイル */
+.fadeRight {
+  animation: fadeRightAnime 0.8s forwards;
+  /* fadeRightAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fadeIn {
+  animation: fadeInAnime 0.8s forwards;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* トリガーアニメーションのスタイル */
+.fadeUpTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger,
+.fadeInTrigger {
+  opacity: 0;
+  /* 最初は非表示 */
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateY(100px);
+    /* 100px下に動かす */
+  }
+
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateY(0);
+    /* 元の位置に戻す */
+  }
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateX(10px);
+    /* 10px右に動かす */
+  }
+
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateX(0);
+    /* 元の位置に戻す */
+  }
+}
+
+@keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateX(-10px);
+    /* 10px左に動かす */
+  }
+
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateX(0);
+    /* 元の位置に戻す */
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+  }
+
+  to {
+    opacity: 1;
+    /* 可視化する */
   }
 }

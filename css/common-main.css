@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 100%;
   scroll-behavior: smooth;
@@ -137,6 +138,10 @@ li {
   background-color: transparent;
   z-index: 100;
   height: 80px;
+  transition: background-color 0.1s;
+}
+.header-wrap.bg-main {
+  background-color: #1b1b1c;
 }
 @media screen and (max-width: 480px) {
   .header-wrap {
@@ -195,17 +200,14 @@ li {
   font-size: clamp(0.75rem, 0.463rem + 0.6vw, 1rem);
   position: relative;
 }
-.header-wrap__nav__list__item a:hover {
-  opacity: 0.8;
-}
 .header-wrap__nav__list__item a::after {
   position: absolute;
   content: "";
-  bottom: -5px;
+  bottom: -8px;
   left: 0;
   width: 100%;
   height: 2.5px;
-  background-color: #0055df;
+  background-color: #fff;
   transition: all 0.3s;
   transform: scale(0, 1);
   transform-origin: center top;
@@ -393,7 +395,10 @@ li {
     width: clamp(9.375rem, 4.976rem + 14.63vw, 12rem);
   }
 }
-.btn a {
+
+.def-btn {
+  position: relative;
+  overflow: hidden;
   display: block;
   background-color: transparent;
   color: #fff;
@@ -406,22 +411,49 @@ li {
   font-weight: 700;
   line-height: 1.8;
 }
-.btn a span {
+.def-btn span {
+  position: relative;
+  z-index: 3;
   vertical-align: 9px;
   margin-right: 20px;
 }
 @media screen and (max-width: 1024px) {
-  .btn a span {
+  .def-btn span {
     vertical-align: 7px;
   }
 }
 @media screen and (max-width: 768px) {
-  .btn a span {
+  .def-btn span {
     vertical-align: 5px;
   }
 }
-.btn a svg {
+.def-btn svg {
+  position: relative;
+  z-index: 3;
   vertical-align: 1px;
+}
+
+.def-btn:hover {
+  opacity: 1;
+  color: #1b1b1c;
+}
+
+.bgleft::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+}
+
+.bgleft:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
 }
 
 .r-btn {
@@ -500,6 +532,10 @@ li {
   transform: rotate(-45deg);
   width: clamp(1.313rem, -0.188rem + 3.13vw, 2.625rem);
   height: clamp(1.313rem, -0.188rem + 3.13vw, 2.625rem);
+  transition: transform 0.3s ease;
+}
+.footer-wrap__top__btn a:hover svg {
+  transform: rotate(-45deg) translateY(-20%);
 }
 .footer-wrap__flow__list {
   display: flex;
@@ -517,8 +553,8 @@ li {
   white-space: nowrap;
   padding: 0 1em 1em 0;
   margin: 0;
-  -webkit-animation: marquee-left 16s linear infinite;
-          animation: marquee-left 16s linear infinite;
+  -webkit-animation: marquee-left 35s linear infinite;
+          animation: marquee-left 35s linear infinite;
 }
 @media screen and (max-width: 768px) {
   .footer-wrap__btn {
@@ -536,7 +572,9 @@ li {
   width: 100%;
   height: 100%;
   background-color: #1b1b1c;
+  border: 1px solid #1b1b1c;
   gap: 5%;
+  transition: all 0.3s;
 }
 .footer-wrap__btn a span {
   font-size: clamp(0.688rem, 0.281rem + 1.35vw, 1.5rem);
@@ -546,6 +584,15 @@ li {
 .footer-wrap__btn a svg {
   width: clamp(1.125rem, 0.688rem + 1.46vw, 2rem);
   height: clamp(1.125rem, 0.688rem + 1.46vw, 2rem);
+  transition: all 0.3s;
+}
+.footer-wrap__btn a:hover {
+  background-color: #fff;
+  color: #1b1b1c;
+  border: 1px solid #1b1b1c;
+}
+.footer-wrap__btn a:hover svg {
+  transform: translateX(30%);
 }
 .footer-wrap__link {
   margin-top: 5%;
@@ -591,11 +638,30 @@ li {
 .footer-wrap__link__nav__list__item a {
   color: #1b1b1c;
   font-size: clamp(0.75rem, 0.536rem + 0.45vw, 0.938rem);
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .footer-wrap__link__nav__list__item a {
     font-size: clamp(0.625rem, 0.416rem + 0.7vw, 0.75rem);
   }
+}
+.footer-wrap__link__nav__list__item a:hover {
+  transition: all 0.3s;
+}
+.footer-wrap__link__nav__list__item a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: #1b1b1c;
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+.footer-wrap__link__nav__list__item a:hover::after {
+  transform: scale(1, 1);
 }
 @media screen and (max-width: 480px) {
   .footer-wrap__link__nav__copyright {
@@ -622,5 +688,152 @@ li {
 @keyframes marquee-left {
   100% {
     transform: translateX(-100%);
+  }
+}
+/* フェードアップのスタイル */
+.fadeUp {
+  -webkit-animation: fadeUpAnime 0.8s forwards;
+          animation: fadeUpAnime 0.8s forwards;
+  /* fadeUpAnimeを0.8秒で一回実行 */
+  opacity: 0;
+}
+
+/* フェードレフトのスタイル */
+.fadeLeft {
+  -webkit-animation: fadeLeftAnime 0.8s forwards;
+          animation: fadeLeftAnime 0.8s forwards;
+  /* fadeLeftAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* フェードライトのスタイル */
+.fadeRight {
+  -webkit-animation: fadeRightAnime 0.8s forwards;
+          animation: fadeRightAnime 0.8s forwards;
+  /* fadeRightAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fadeIn {
+  -webkit-animation: fadeInAnime 0.8s forwards;
+          animation: fadeInAnime 0.8s forwards;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* トリガーアニメーションのスタイル */
+.fadeUpTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger,
+.fadeInTrigger {
+  opacity: 0;
+  /* 最初は非表示 */
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateY(100px);
+    /* 100px下に動かす */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateY(0);
+    /* 元の位置に戻す */
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateY(100px);
+    /* 100px下に動かす */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateY(0);
+    /* 元の位置に戻す */
+  }
+}
+@-webkit-keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateX(10px);
+    /* 10px右に動かす */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateX(0);
+    /* 元の位置に戻す */
+  }
+}
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateX(10px);
+    /* 10px右に動かす */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateX(0);
+    /* 元の位置に戻す */
+  }
+}
+@-webkit-keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateX(-10px);
+    /* 10px左に動かす */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateX(0);
+    /* 元の位置に戻す */
+  }
+}
+@keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateX(-10px);
+    /* 10px左に動かす */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+    transform: translateX(0);
+    /* 元の位置に戻す */
+  }
+}
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
+  }
+}
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+    /* 最初は非表示 */
+  }
+  to {
+    opacity: 1;
+    /* 可視化する */
   }
 }

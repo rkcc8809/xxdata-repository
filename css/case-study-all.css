@@ -84,10 +84,12 @@ li {
 }
 .ca-body-wrap__list__item__link {
   color: #1b1b1c;
+  transition: all 0.3s;
 }
 .ca-body-wrap__list__item__link__img {
   width: 100%;
   aspect-ratio: 4/3;
+  overflow: hidden;
 }
 .ca-body-wrap__list__item__link__img img {
   width: 100%;
@@ -95,6 +97,8 @@ li {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  transition: all 0.3s;
+  transform: scale(1);
 }
 .ca-body-wrap__list__item__link__con {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -147,4 +151,7 @@ li {
   .ca-body-wrap__list__item__link__con__ttl h2 {
     font-size: 14px;
   }
+}
+.ca-body-wrap__list__item__link:hover .ca-body-wrap__list__item__link__img img {
+  transform: scale(1.2);
 }
