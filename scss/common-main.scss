@@ -121,10 +121,10 @@
     background-color: transparent;
     z-index: 100;
     height: 80px;
-    transition: background-color 0.1s;
+    transition: background-color 0.3s;
     &.bg-main {
-        background-color: g.$cMain;
-      }
+      background-color: g.$cMain;
+    }
     @include g.mq(sp) {
       height: 60px;
     }
@@ -176,7 +176,7 @@
             font-size: g.$font-12-16-tab;
             position: relative;
           }
-          
+
           & a::after {
             position: absolute;
             content: "";
@@ -362,42 +362,40 @@
   @include g.mq(tab) {
     width: clamp(9.375rem, 4.976rem + 14.63vw, 12rem);
   }
-
-  
 }
 
 .def-btn {
   position: relative;
   overflow: hidden;
   display: block;
-    background-color: transparent;
-    color: g.$cWhite;
-    border: 1px solid g.$cWhite;
-    border-radius: 50px;
-    text-align: center;
-    cursor: pointer;
-    font-size: g.$font-16-32;
-    @include g.font-en;
-    line-height: 1.8;
+  background-color: transparent;
+  color: g.$cWhite;
+  border: 1px solid g.$cWhite;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  font-size: g.$font-16-32;
+  @include g.font-en;
+  line-height: 1.8;
 
   & span {
     position: relative;
     z-index: 3;
     vertical-align: 9px;
-      margin-right: 20px;
-    
-      @include g.mq(pc) {
-        vertical-align: 7px;
-      }
-    
-      @include g.mq(tab) {
-        vertical-align: 5px;
-      }
+    margin-right: 20px;
+
+    @include g.mq(pc) {
+      vertical-align: 7px;
+    }
+
+    @include g.mq(tab) {
+      vertical-align: 5px;
+    }
   }
   & svg {
     position: relative;
-      z-index: 3;
-      vertical-align: 1px;
+    z-index: 3;
+    vertical-align: 1px;
   }
 }
 
@@ -423,7 +421,6 @@
   transform-origin: left top;
   transform: scale(1, 1);
 }
-
 
 .r-btn {
   margin-left: auto;
@@ -592,15 +589,15 @@
             }
             & a::after {
               content: "";
-                position: absolute;
-                bottom: -5px;
-                left: 0;
-                width: 100%;
-                height: 2.5px;
-                background: g.$cMain;
-                transition: all 0.3s;
-                transform: scale(0, 1);
-                transform-origin: center top;
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 100%;
+              height: 2.5px;
+              background: g.$cMain;
+              transition: all 0.3s;
+              transform: scale(0, 1);
+              transform-origin: center top;
             }
             & a:hover::after {
               transform: scale(1, 1);
