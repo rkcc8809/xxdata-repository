@@ -13,6 +13,7 @@
     @include g.mq(sp) {
       padding-top: 10%;
       padding-bottom: 5%;
+      width: 86.5%;
     }
     &__list {
       &__item {
@@ -23,7 +24,7 @@
         &__link {
           transition: all 0.3s;
           &:hover {
-          opacity: 0.7;
+            opacity: 0.7;
           }
           &__cate {
             display: inline-block;
@@ -50,7 +51,7 @@
           }
           &__ttl {
             padding: 0.75em 0;
-            
+
             & h2 {
               font-size: 1rem;
               color: g.$cMain;

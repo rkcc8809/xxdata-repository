@@ -8,9 +8,7 @@
   background-color: g.$cWhite;
   color: g.$cMain;
   padding: 5% 0;
-  @include g.mq(tab) {
-    padding: 7.5% 0;
-  }
+
   &-wrap {
     @include g.mq(tab) {
       width: 87.5%;

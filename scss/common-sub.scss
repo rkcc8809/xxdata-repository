@@ -214,11 +214,16 @@
         width: 25%;
       }
       @include g.mq(sp) {
-        width: 35%;
+        width: 41%;
+      }
+      &.__news {
+        @include g.mq(sp) {
+          width: 50%;
+        }
       }
       &.__third {
         @include g.mq(sp) {
-          margin-right: 31.5vw;
+          margin-right: 45vw;
         }
       }
 
@@ -273,7 +278,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        gap: 3.5%;
+        gap: 2%;
         &__item {
           & a {
             &:hover {

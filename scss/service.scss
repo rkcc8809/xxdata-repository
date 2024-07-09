@@ -5,7 +5,7 @@
 @use "global" as g;
 
 .s-advantage {
-  margin: 10% 0 15%;
+  margin: 10% 0;
   &-line {
     border-top: 1px solid g.$cBlue;
     transform: skewY(-5deg);
@@ -44,14 +44,13 @@
       &__con {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         flex-direction: row-reverse;
         margin: 5% 0;
         @include g.mq(sp) {
           display: block;
         }
         &__img {
-          width: 40%;
+          width: 35%;
           @include g.mq(sp) {
             width: 60%;
             margin: 10% auto;
@@ -63,7 +62,8 @@
           }
         }
         &__txt {
-          width: 55%;
+          width: 60%;
+          margin-top: 3.5%;
           @include g.mq(sp) {
             width: 100%;
           }

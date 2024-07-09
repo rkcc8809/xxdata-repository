@@ -12,7 +12,7 @@ $('.slider').slick({
   centerMode: true, // 要素の中央揃え
   variableWidth: true,
   centerPadding: '0', // 中央のスライドの左右の余白
-  dots: true, // 下部ドットナビゲーションの表示
+  dots: false, // 下部ドットナビゲーションの表示
   responsive: [
     {
       breakpoint: 769,
