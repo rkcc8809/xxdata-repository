@@ -43,12 +43,10 @@
       }
       &__cate {
         display: inline-block;
-        padding: 3%;
+        padding: 2% 3%;
         background-color: g.$cMain;
         color: g.$cWhite;
-        @include g.mq(pc) {
-          padding: 4%;
-        }
+
         & p {
           font-size: 0.75rem;
           font-weight: 500;

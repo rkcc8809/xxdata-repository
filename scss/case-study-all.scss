@@ -19,14 +19,13 @@
 
     &__list {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       gap: 2%;
       @include g.mq(sp) {
         display: block;
       }
       &__item {
-        width: 31.5%;
+        width: 32%;
 
         &:nth-child(n + 4) {
           margin-top: 3.5%;
@@ -79,15 +78,10 @@
               box-sizing: border-box;
               background-color: g.$cMain;
               color: g.$cWhite;
-              padding: 3%;
-              margin: 2%;
+              padding: 2% 3%;
+              margin: 1% 2%;
               display: inline-block;
-              @include g.mq(pc) {
-                padding: 5%;
-              }
-              @include g.mq(sp) {
-                padding: 3%;
-              }
+
               & p {
                 font-size: 0.75rem;
                 @include g.mq(pc) {

@@ -15,8 +15,6 @@ body {
 
 a {
   text-decoration: none;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
 }
@@ -28,8 +26,7 @@ li {
 .cae-head {
   background-color: #eee;
   color: #1b1b1c;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 5% 0;
 }
 @media screen and (max-width: 768px) {
@@ -38,12 +35,8 @@ li {
   }
 }
 .cae-head-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
   .cae-head-wrap {
@@ -85,14 +78,9 @@ li {
 }
 .cae-head-wrap__con__cate {
   display: inline-block;
-  padding: 3%;
+  padding: 2% 3%;
   background-color: #1b1b1c;
   color: #fff;
-}
-@media screen and (max-width: 1024px) {
-  .cae-head-wrap__con__cate {
-    padding: 4%;
-  }
 }
 .cae-head-wrap__con__cate p {
   font-size: 0.75rem;
@@ -128,8 +116,6 @@ li {
   }
 }
 .cae-head-wrap__con__list__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 3.5% 0;
 }
@@ -162,17 +148,10 @@ li {
   }
 }
 .cae-bottom-wrap__con {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 480px) {
   .cae-bottom-wrap__con {
